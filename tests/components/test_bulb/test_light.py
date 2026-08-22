@@ -21,7 +21,7 @@ from tests.common import MockConfigEntry
 
 
 @pytest.fixture
-async def test_bulb_setup(hass: HomeAssistant) -> None:
+async def test_bulb_setup(hass: HomeAssistant) -> MockConfigEntry:
     """Set up the Test Bulb integration."""
     entry = MockConfigEntry(
         domain=DOMAIN,
@@ -32,9 +32,12 @@ async def test_bulb_setup(hass: HomeAssistant) -> None:
 
     await hass.config_entries.async_setup(entry.entry_id)
     await hass.async_block_till_done()
+    return entry
 
 
-async def test_light_on_off(hass: HomeAssistant, test_bulb_setup: None) -> None:
+async def test_light_on_off(
+    hass: HomeAssistant, test_bulb_setup: MockConfigEntry
+) -> None:
     """Test turning the light on and off."""
     entity_id = "light.test_bulb"
 
@@ -63,7 +66,9 @@ async def test_light_on_off(hass: HomeAssistant, test_bulb_setup: None) -> None:
     assert state.state == STATE_OFF
 
 
-async def test_light_color_temp(hass: HomeAssistant, test_bulb_setup: None) -> None:
+async def test_light_color_temp(
+    hass: HomeAssistant, test_bulb_setup: MockConfigEntry
+) -> None:
     """Test setting the color temperature."""
     entity_id = "light.test_bulb"
 
@@ -90,9 +95,11 @@ async def test_light_color_temp(hass: HomeAssistant, test_bulb_setup: None) -> N
 
 
 async def test_light_unique_id(
-    hass: HomeAssistant, entity_registry: er.EntityRegistry, test_bulb_setup: None
+    hass: HomeAssistant,
+    entity_registry: er.EntityRegistry,
+    test_bulb_setup: MockConfigEntry,
 ) -> None:
     """Test the light has a unique ID."""
     entity = entity_registry.async_get("light.test_bulb")
     assert entity
-    assert entity.unique_id == "test_bulb_instance"
+    assert entity.unique_id == test_bulb_setup.entry_id
