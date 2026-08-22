@@ -1,24 +1,50 @@
 rules:
   # Bronze
-  action-setup: done
+  action-setup:
+    status: exempt
+    comment: Virtual test integration does not register actions.
   appropriate-polling: done
-  brands: done
-  common-modules: done
+  brands:
+    status: exempt
+    comment: Virtual test integration without manufacturer branding.
+  common-modules:
+    status: exempt
+    comment: No external library dependencies for virtual test light.
   config-flow-test-coverage: done
   config-flow: done
-  dependency-transparency: done
-  docs-actions: done
-  docs-conditions: done
-  docs-high-level-description: done
-  docs-installation-instructions: done
-  docs-removal-instructions: done
-  docs-triggers: done
-  entity-event-setup: done
+  dependency-transparency:
+    status: exempt
+    comment: No external dependencies.
+  docs-actions:
+    status: exempt
+    comment: No actions to document.
+  docs-conditions:
+    status: exempt
+    comment: No conditions to document.
+  docs-high-level-description:
+    status: exempt
+    comment: Internal test integration not intended for public documentation.
+  docs-installation-instructions:
+    status: exempt
+    comment: Internal test integration not intended for public documentation.
+  docs-removal-instructions:
+    status: exempt
+    comment: Internal test integration not intended for public documentation.
+  docs-triggers:
+    status: exempt
+    comment: No triggers to document.
+  entity-event-setup:
+    status: exempt
+    comment: Virtual test light does not emit events.
   entity-unique-id: done
   has-entity-name: done
   runtime-data: done
-  test-before-configure: done
-  test-before-setup: done
+  test-before-configure:
+    status: exempt
+    comment: Virtual test light; no remote connection to validate before configure.
+  test-before-setup:
+    status: exempt
+    comment: Virtual test light; no external service to test before setup.
   unique-config-entry: done
 
   # Silver
