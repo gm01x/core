@@ -27,12 +27,14 @@ async def test_form(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> None:
     assert len(mock_setup_entry.mock_calls) == 1
 
 
-async def test_single_instance(hass: HomeAssistant, mock_setup_entry: AsyncMock) -> None:
+async def test_single_instance(
+    hass: HomeAssistant, mock_setup_entry: AsyncMock
+) -> None:
     """Test that only one instance can be configured."""
     result = await hass.config_entries.flow.async_init(
         DOMAIN, context={"source": config_entries.SOURCE_USER}
     )
-    
+
     result = await hass.config_entries.flow.async_configure(
         result["flow_id"],
         {},
