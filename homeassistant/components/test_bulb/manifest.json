@@ -1,9 +1,7 @@
 {
   "domain": "test_bulb",
   "name": "Test Bulb",
-  "codeowners": [
-    "@gm01x"
-  ],
+  "codeowners": ["@gm01x"],
   "config_flow": true,
   "dependencies": [],
   "documentation": "https://www.home-assistant.io/integrations/test_bulb",
