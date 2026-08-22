@@ -37,7 +37,9 @@ rules:
     status: exempt
     comment: Virtual test light does not emit events.
   entity-unique-id: done
-  has-entity-name: done
+  has-entity-name:
+    status: exempt
+    comment: Simple test entity with direct name, not using device naming pattern.
   runtime-data: done
   test-before-configure:
     status: exempt

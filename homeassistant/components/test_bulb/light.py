@@ -27,8 +27,8 @@ async def async_setup_entry(
 class TestBulbLight(LightEntity):
     """Representation of a Test Bulb light."""
 
-    _attr_has_entity_name = True
-    _attr_name = None
+    _attr_has_entity_name = False
+    _attr_name = "Test Bulb"
     _attr_color_mode = ColorMode.COLOR_TEMP
     _attr_supported_color_modes = {ColorMode.COLOR_TEMP}
     _attr_min_color_temp_kelvin = MIN_KELVIN
