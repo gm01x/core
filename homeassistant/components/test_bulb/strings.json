@@ -1,0 +1,12 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "[%key:common::config_flow::abort::already_configured_device%]"
+    },
+    "step": {
+      "user": {
+        "description": "Set up a virtual Test Bulb light."
+      }
+    }
+  }
+}
