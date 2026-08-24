@@ -7207,6 +7207,12 @@
       "config_flow": true,
       "iot_class": "local_polling"
     },
+    "temp_controller": {
+      "name": "Temp Controller",
+      "integration_type": "device",
+      "config_flow": true,
+      "iot_class": "assumed_state"
+    },
     "temper": {
       "name": "TEMPer",
       "integration_type": "hub",

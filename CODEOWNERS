@@ -1831,6 +1831,8 @@ CLAUDE.md @home-assistant/core
 /tests/components/tellduslive/ @fredrike
 /homeassistant/components/teltonika/ @karlbeecken
 /tests/components/teltonika/ @karlbeecken
+/homeassistant/components/temp_controller/ @gm01x
+/tests/components/temp_controller/ @gm01x
 /homeassistant/components/temperature/ @home-assistant/core
 /tests/components/temperature/ @home-assistant/core
 /homeassistant/components/template/ @Petro31 @home-assistant/core
