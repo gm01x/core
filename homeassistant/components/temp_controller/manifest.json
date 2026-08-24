@@ -1,0 +1,10 @@
+{
+  "domain": "temp_controller",
+  "name": "Temp Controller",
+  "codeowners": ["@gm01x"],
+  "config_flow": true,
+  "documentation": "https://www.home-assistant.io/integrations/temp_controller",
+  "integration_type": "device",
+  "iot_class": "assumed_state",
+  "quality_scale": "bronze"
+}
